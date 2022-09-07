@@ -1,0 +1,39 @@
+<%- include('../partials/header'); -%>
+<!-- <h1 id = "a_name">
+    College Engagement 
+</h1> -->
+<style>
+    
+</style>
+<%- include('../partials/navbar') %>
+
+<div class ="container">
+    <%- include('../partials/flash'); -%>
+    <% for (let val of blog){ %>
+        <div class = "blog" data-aos="fade-up" >
+            <div id = "top">
+                <div id = "pic">
+                    <img id = "pic-css" src = "<%= val.author.image %>">
+                </div>
+                <div id = "name">
+                    <p id = "f_name"><%= val.author.username %></p>
+                    <!-- <p id = "side">Posted on : <%= val.created %></p> -->
+                </div>
+            </div>
+            <div class = "img">
+                <img id = "blog-img" src = <%= val.images[0].url %> >
+            </div>
+            <span class = "text">
+                <%= val.message %>                  
+            </span>
+            <div id = "link"><a href="/blog/<%= val._id %>">View Post</a>  </div>
+            
+        </div>
+        
+    <% } %>
+</div>
+
+
+
+<%- include('../partials/footer'); -%>
+<%- include('../partials/script'); -%>

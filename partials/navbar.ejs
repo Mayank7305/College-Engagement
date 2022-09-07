@@ -1,0 +1,37 @@
+
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><span id ="app">College</span> Engagement</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <a class="nav-link" href="/blog">Blog</a>
+          <a class="nav-link" href="/blog/new">Post</a>
+          <a class="nav-link" href="/notice">Notice</a>
+        </div>
+        <div class = "navbar-nav ms-auto">
+          <% if(!currentUser) {%>
+          <a class = "nav-link" href = "/user/login">Login</a>
+          <!-- <a class = "nav-link" href = "user/signup">Register</a> -->
+          <% }else {%>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="/profile">My profile</a></li>
+              <li><a class="dropdown-item" href="/profile/myblogs">my blogs</a></li>
+            </ul>
+          </div>
+          <a class = "nav-link" href = "/profile" id = "user"><%= currentUser.username %></a>
+          
+          <a class = "nav-link" href = "/user/logout"><i class="material-icons">exit_to_app</i></a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,42 @@
+<!-- <footer class = "footer bg-dark py-3 mt-auto">
+  <div class = "container">
+    <span class = "text-muted">&copy; College Engagement 2022</span>
+  </div>
+</footer> -->
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function () {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.validated-form')
+  
+    // Loop over them and prevent submission
+    Array.from(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+  </script>
+
+  
+  <script src = "/js/jquery.min.js"></script>
+  <script src = "/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration : 1000
+    });
+  </script>
+
+<!-- <script type = "text/javascript" src = "app.js"></script> -->
+</body>
+</html>

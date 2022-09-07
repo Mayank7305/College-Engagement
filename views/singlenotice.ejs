@@ -1,0 +1,32 @@
+<%- include('../partials/header'); -%>
+<%- include('../partials/navbar'); -%>
+<div class = "container3 mt-5">
+  <%- include('../partials/flash'); -%>
+  <div class="card mb-3">
+    <% if(notice.images.length > 0) { %>
+      <img src="<%= notice.images[0].url %>" class="card-img-top" alt="...">
+    <% } %>
+      <div class="card-body">
+        <!-- <h5 class="card-title">Card title</h5> -->
+        <p class="card-text"><%= notice.title %> </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= notice.message %></li>
+        <li class="list-group-item">Submitted By : <span class = "blog_a_name"><%= notice.author.username %></span></li>
+        <!-- <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li> -->
+      </ul>
+      <% if(currentUser && notice.author.equals(currentUser._id)) { %>
+      <div class="card-body">
+        <a href="/notice/<%= notice._id %>/update" class="card-link btn btn-info" id = "edit">Edit</a>
+        <a href="/notice/<%= notice._id %>/delete" class="card-link btn btn-danger" id = "delete">Delete</a>
+      </div>
+      <% } %>
+      <div class = "card-footer text-muted">
+          Don't Ignore It !!!
+      </div>
+  </div>
+</div>
+
+
+<%- include('../partials/script'); -%>

@@ -1,0 +1,79 @@
+<%- include('../partials/header'); -%>
+<h1 id = "a_name" style ="text-align: center;">
+    college Engagement 
+</h1>
+
+<a href = "/blog" ><i class="material-icons">arrow_back</i> Back</a>
+
+    <%- include('../partials/flash'); -%>
+    <!-- Account page navigation-->
+    <hr class="mt-0 mb-4">
+    <div class="container">
+        
+        <div class="card-header" style = "text-align: center; font-size: 30px;">Account Details</div>
+        <form action = "/profile" method = "post" enctype="multipart/form-data" >
+            
+            <!-- Profile picture upload button-->
+            <div class="input-group mb-3 mt-3" >
+                <input type="file" class="form-control" id="image" name = "image">
+                <label class="input-group-text" for="image" >Upload profile</label>
+                
+            </div>
+            <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+            <!-- Form Group (username)-->
+            <div class="mb-3">
+                <label class="small mb-1" for="inputUsername">Username </label>
+                <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="<%= user.username %>" name = "username">
+            </div>
+            <!-- Form Row-->
+            <div class="row gx-3 mb-3">
+                <!-- Form Group (first name)-->
+                <div class="col-md-6">
+                    <label class="small mb-1" for="inputFirstName">First name</label>
+                    <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" placeholder="First Name" name = "first_name" value = "<%= user.first_name %>" >
+                </div>
+                <!-- Form Group (last name)-->
+                <div class="col-md-6">
+                    <label class="small mb-1" for="inputLastName">Last name</label>
+                    <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" placeholder = "Last Name" name = "last_name" value="<%= user.last_name %>">
+                </div>
+            </div>
+            <!-- Form Row        -->
+            <div class="row gx-3 mb-3">
+                <!-- Form Group (organization name)-->
+                <div class="col-md-6">
+                    <label class="small mb-1" for="inputOrgName">Department name</label>
+                    <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" placeholder="Department" name = "Department" value = "<%= user.Department %>">
+                </div>
+                <!-- Form Group (location)-->
+                <div class="col-md-6">
+                    <label class="small mb-1" for="inputLocation">Location</label>
+                    <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" placeholder = "Location" name = "Location" value = "<%= user.Location %>">
+                </div>
+            </div>
+            <!-- Form Group (email address)-->
+            <div class="mb-3">
+                <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value = "<%= user.email %>">
+            </div>
+            <!-- Form Row-->
+            <div class="row gx-3 mb-3">
+                <!-- Form Group (phone number)-->
+                <div class="col-md-6">
+                    <label class="small mb-1" for="inputPhone">Phone number</label>
+                    <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" placeholder = "Phone number" name = "Phone" value = "<%= user.Phone %>">
+                </div>
+                <!-- Form Group (birthday)-->
+                <div class="col-md-6">
+                    <label class="small mb-1" for="inputBirthday">Birthday</label>
+                    <input class="form-control" id="inputBirthday" type="text" placeholder="Enter your birthday" placeholder = "DOB" name = "DOB" value = "<%= user.DOB %>">
+                </div>
+            </div>
+            <!-- Save changes button-->
+            <button class="btn btn-primary" >Save changes</button>
+        </form>
+    </div>
+
+      
+<%- include('../partials/footer'); -%>
+<%- include('../partials/script'); -%>

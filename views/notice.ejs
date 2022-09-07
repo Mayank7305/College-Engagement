@@ -1,0 +1,56 @@
+<%- include('../partials/header'); -%>
+<h1 id = "a_name">
+    College Engagement 
+</h1>
+
+<%- include('../partials/navbar') %>
+
+<div class ="container">
+    <%- include('../partials/flash'); -%>
+    <% for (let val of notice){ %>
+        <div class = "blog" data-aos="fade-up" >
+            <div id = "top">
+                <div id = "pic">
+                    <img id = "pic-css" src = "/images/unnamed.png">
+                </div>
+                <div id = "name">
+                    <p id = "f_name"><%= val.author.username %></p>
+                    <!-- <p id = "side">Posted on : <%= val.created %></p> -->
+                </div>
+            </div>
+            <% if(val.images.length > 0) { %>
+            <div class = "img">
+                <img src = <%=  val.images[0].url %> >
+            </div>
+            <% } %>
+            <!-- <div class = "content">
+                                     
+            </div> -->
+            <span class = "text">
+                <%= val.message %>   
+            </span>
+
+            <div id = "link"><a href="/notice/<%= val._id %>">View Post</a></div>
+            
+        </div>
+        
+    <% } %>
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration : 1000
+  });
+</script>
+
+<!-- <% if(token) { %>
+    <script>
+        let token = <%- JSON.stringify(token) %>
+        localStorage.setItem('info', JSON.stringify({
+            'token': token
+        }));
+    </script>
+<% } %> -->
+<%- include('../partials/footer'); -%>
+<%- include('../partials/script'); -%>
